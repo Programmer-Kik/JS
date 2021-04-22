@@ -1,4 +1,4 @@
-class StorageService {
+export class StorageService {
 
     #listOfObjects;
 
@@ -64,74 +64,3 @@ class StorageService {
         }
     }
 }
-
-let storage = new StorageService();
-
-storage.add(object = {
-    "id" : "first",
-    "name": "Alex",
-    "surname": "Ustalkov",
-    "age": 21
-});
-storage.add(object = {
-    "id" : "second",
-    "name": "Dima",
-    "surname": "Lapushkin",
-    "age": 21
-});
-storage.add(object = {
-    "id" : "second",
-    "name": "Dima",
-    "surname": "Lapushkin",
-    "age": 21
-});
-
-console.log(storage.getAll());
-console.log("\n");
-
-console.log(storage.getById("first"));
-console.log(storage.getById("third"));
-console.log("\n");
-
-storage.deleteById("first");
-console.log(storage.getAll());
-storage.deleteById("first");
-console.log("\n");
-
-storage.replaceById("second", object = {
-    "id" : "first",
-    "name": "Alex",
-    "surname": "Ustalkov",
-    "age": 21
-});
-console.log(storage.getAll());
-storage.replaceById("sixth", object = {
-    "id" : "first",
-    "name": "Alex",
-    "surname": "Ustalkov",
-    "age": 21
-});
-console.log(storage.getAll());
-console.log("\n");
-
-storage.updateById("first", object = {
-    "id" : "second",
-    "name": "Dima",
-    "surname": "Lapushkin",
-    "age": 21
-});
-console.log(storage.getAll());
-storage.updateById("third", object = {
-    "id" : "second",
-    "name": "Dima",
-    "surname": "Lapushkin",
-    "age": 21
-});
-storage.updateById("first", object = {
-    "id" : "second",
-    "name": "Dima",
-    "surname": "Lapushkin",
-    "age": 21,
-    "job" : true
-});
-console.log(storage.getAll());
